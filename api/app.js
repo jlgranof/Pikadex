@@ -4,6 +4,7 @@ const cors = require('cors');
 const csurf = require('csurf');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
+const csp = require('helmet-csp');
 
 const { port } = require('./config');
 
@@ -28,9 +29,10 @@ app.use(express.json());
 if (!isProduction) app.use(cors());
 
 // Add helmet middleware to mitigate XSS attacks
-app.use(helmet.crossOriginResourcePolicy({
-  policy: "cross-origin"
-}));
+// app.use(helmet.crossOriginResourcePolicy({
+//   policy: "cross-origin"
+// }));
+
 
 // Add csurf middleware and configure it to use cookies. It will add a _csrf cookie that
 // is HTTP only and a method on all request that will be set to another header to confirm
@@ -42,6 +44,7 @@ app.use(csurf({
       httpOnly: true
     }
   }));
+
   
 // Import and Use the Routes
 const routes = require('./routes');

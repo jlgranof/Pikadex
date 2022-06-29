@@ -1,8 +1,9 @@
 // This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+// learn more about it in the docs: https://pris.ly/d/prisma-scheme
 
 generator client {
   provider = "prisma-client-js"
+  engineType = "binary"
 }
 
 datasource db {
@@ -16,5 +17,5 @@ model User {
   email String @db.VarChar(100) @unique // Email must be 100 characters or less
   hashedPassword String 
   avatarUrl String
-  joined DateTime
+  joined DateTime  @default(now())
 }
