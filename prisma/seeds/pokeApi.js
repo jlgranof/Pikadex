@@ -13,6 +13,7 @@ const getPokemon = async(id) => {
 
   const pokemon = {};
 
+  pokemon.nationalPokedexNumber = id;
   pokemon.abilities = pokeInfo.abilities.map(ability => title(ability.ability.name)).join(', '); 
   pokemon.attack = pokeInfo.stats[1].base_stat;
   pokemon.defense = pokeInfo.stats[2].base_stat;
@@ -30,9 +31,20 @@ const getPokemon = async(id) => {
 
   const types = pokeInfo.types.map(type => title(type.type.name))
 
-  console.log(pokemon, types);
+  if (id === 29) pokemon.name += '-F';
+  else if (id === 32) pokemon.name += '-M';
+  else if (id === 122) pokemon.name += '. Mime';
+  else if (id === 439) pokemon.name += ' Jr.';
+  else if (id === 474) pokemon.name += '-Z';
+  else if (id === 785) pokemon.name += ' Koko';
+  else if (id === 786) pokemon.name += ' Lele';
+  else if (id === 787) pokemon.name += ' Bulu';
+  else if (id === 788) pokemon.name += ' Fini';
+  else if (id === 866) pokemon.name += '. Rime';
+  
+  return { pokemon, types };
 }
 
 const title = str => `${str[0].toUpperCase()}${str.slice(1)}`;
 
-getPokemon(1)
+module.exports = { getPokemon };
