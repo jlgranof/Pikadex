@@ -9,12 +9,14 @@ import { store } from './store/store';
 import { Provider } from 'react-redux';
 
 import { restoreCSRF, csrfFetch } from './uitls/csrf';
+import { login } from './store/authSlice';
 
 if (process.env.NODE_ENV !== 'production') {
   restoreCSRF();
 
   window.csrfFetch = csrfFetch;
   window.store = store;
+  window.login = login;
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

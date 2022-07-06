@@ -1,27 +1,15 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
 
-import { decrement, increment } from './store/authSlice';
+import LoginForm from './components/LoginForm';
+
 
 function App() {
-  const count = useSelector(state => state.counter.value);
-  const dispatch = useDispatch();
-
   return (
     <div className="App">
-      <button
-          aria-label="Increment value"
-          onClick={() => dispatch(increment())}
-        >
-          Increment
-        </button>
-        <span>{count}</span>
-        <button
-          aria-label="Decrement value"
-          onClick={() => dispatch(decrement())}
-        >
-          Decrement
-        </button>
+      <Routes>
+        <Route path="/" element={<div>Hello</div>} />
+        <Route path="/login" element={<LoginForm />} />
+      </Routes>
     </div>
   );
 }

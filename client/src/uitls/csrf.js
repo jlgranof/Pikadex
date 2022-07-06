@@ -2,7 +2,7 @@ import Cookies from 'js-cookie';
 
 export async function csrfFetch(url, options={}) {
   // sets method to GET if there is not one
-  options.method = options.methond || "GET";
+  options.method = options.method || "GET";
 
   // sets headers to an empty object if there are not any
   options.headers = options.headers || {};

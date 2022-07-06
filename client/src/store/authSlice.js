@@ -1,30 +1,33 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { csrfFetch } from '../uitls/csrf';
 
-const initialState = {
-  value: 0,
-}
+// Login Thunk
+export const login = createAsyncThunk(
+  'auth/loginUser',
+  async({ username, password }, thunkAPI) => {
+    const response = await csrfFetch('/authentication/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        password
+      }),
+    });
+    const data = await response.json();
+    return data.user;
+  }
+)
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  initialState,
+
+// Creating Auth Clice and handling the actions
+export const authSlice = createSlice({
+  name: 'auth',
+  initialState: { user: null },
   reducers: {
-    increment: (state) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload
-    },
+
   },
-})
-
-// Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
-
-export default counterSlice.reducer
+  extraReducers: (builder) => {
+    builder.addCase(login.fulfilled, (state, action) => {
+      state.user = action.payload;
+    });
+  }
+});
