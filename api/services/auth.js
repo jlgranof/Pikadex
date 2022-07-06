@@ -3,7 +3,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 
 const { toRegularUser } = require('../utils/user');
-const { validatePassword } = require('../utils/auth');
 const { jwtConfig } = require('../config');
 
 const prisma = new PrismaClient();
@@ -47,16 +46,13 @@ const restoreUser = (req, res, next) => {
     if (e) return next();
 
     try {
-      console.log(jwtPayload)
       const { id } = jwtPayload.data;
       req.user = await prisma.user.findUnique({
         where: {
           id: id
         }
       });
-     
     } catch (e) {
-      console.log(e)
       res.clearCookie('token');
       return next();
     }

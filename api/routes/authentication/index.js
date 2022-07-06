@@ -12,7 +12,7 @@ const router = express.Router();
 const prisma = new PrismaClient();
 
 router.get('/login', (req, res) => res.json({"hi" : "HI"}));
-router.post('/test', (req, res) => res.json({ "hi": "hi" }));
+router.post('/test', (req, res) => res.json({ requestBody: req.body }));
 
 // Login Route
 router.post(
@@ -20,7 +20,6 @@ router.post(
   asyncHandler(async (req, res, next) => {
     const { username, password } = req.body;
     const user = await loginService({ username, password });
-    console.log(user);
     if (!user) return next(new Error("Login failed"));
 
     setTokenCookie(res, user);
