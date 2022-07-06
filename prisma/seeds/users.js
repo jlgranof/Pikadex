@@ -25,7 +25,9 @@ const seedUsers = async () => {
         avatarUrl: "https://archives.bulbagarden.net/media/upload/f/fb/Misty_SM.png"
       }
     ]
-  })
+  });
+  
+  await prisma.$disconnect();
 }
 
 module.exports = seedUsers;

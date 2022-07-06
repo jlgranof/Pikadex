@@ -1,3 +1,7 @@
 const seedUsers = require('./users');
 
-seedUsers();
+const seedAll = async() => {
+  await seedUsers();
+}
+
+seedAll();

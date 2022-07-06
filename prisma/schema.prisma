@@ -19,3 +19,40 @@ model User {
   avatarUrl String
   joined DateTime  @default(now())
 }
+
+model Type {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(30) @unique
+
+  Pokemons PokemonTypes[]
+}
+
+model Pokemon {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(50) @unique
+  nationalPokedexNumber Int @unique
+  description String
+  height String
+  weight String
+  abilities String
+  isLegendary Boolean @default(false)
+  isMythical Boolean @default(false)
+  hp Int
+  attack Int
+  defense Int
+  specialAttack Int
+  specialDefense Int
+  speed Int
+  pictureUrl String
+
+  types PokemonTypes[]
+}
+
+model PokemonTypes {
+  pokemon Pokemon @relation(fields: [pokemonId], references: [id])
+  pokemonId Int
+  type Type @relation(fields: [typeId], references: [id])
+  typeId Int
+
+  @@id([pokemonId, typeId])
+}
