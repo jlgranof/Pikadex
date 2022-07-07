@@ -42,6 +42,16 @@ export const signUp = createAsyncThunk(
   }
 )
 
+export const logout = createAsyncThunk(
+  'auth/logoutUser',
+  async() => {
+    const response = await csrfFetch('/authentication/logout', {
+      method: 'DELETE'
+    });
+    return response;
+  }
+)
+
 
 // Creating Auth Clice and handling the actions
 export const authSlice = createSlice({
@@ -60,5 +70,8 @@ export const authSlice = createSlice({
     builder.addCase(signUp.fulfilled, (state, action) => {
       state.user = action.payload;
     });
+    builder.addCase(logout.fulfilled, (state, action) => {
+      state.user = {};
+    })
   }
 });
