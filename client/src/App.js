@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import { restoreUser } from './store/authSlice';
 import { getAllPokemon } from './store/pokemonSlice';
 
+import Header from './components/Header';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import PokemonListPage from './Layouts/PokemonListPage';
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <div className="bg-slate-900">
+      <Header />
       <Routes>
         <Route path="/" element={<div>Hello</div>} />
         <Route path="/login" element={<LoginForm />} />
