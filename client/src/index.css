@@ -23,4 +23,8 @@ code {
   .poke-grid {
     grid-template-columns: repeat(auto-fit, minmax(20em,1fr));
   }
+
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 65%, 70% 65%, 60% 100%, 40% 100%, 30% 65%, 0 65%);
+  }
 }
