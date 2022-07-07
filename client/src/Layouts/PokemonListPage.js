@@ -21,7 +21,7 @@ const PokemonListPage = () => {
     : 'Loading...'
 
   return (
-    <div className="PokemonListPage">
+    <div>
       <div className="Header">
         <div className="Featured"></div>
         <div className="Search"></div>

@@ -25,7 +25,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div className="bg-slate-900">
       <Routes>
         <Route path="/" element={<div>Hello</div>} />
         <Route path="/login" element={<LoginForm />} />
