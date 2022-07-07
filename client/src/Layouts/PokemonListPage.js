@@ -5,12 +5,12 @@ import PokemonCard from '../components/PokemonCard/PokemonCard';
 
 const PokemonListPage = () => {
   const fullPokemonList = useSelector(state => state.pokemon);
-  const [allPokemon, setAllPokemon] = useState([]);
+  // const [allPokemon, setAllPokemon] = useState([]);
   const [pokemon, setPokemon] = useState('')
 
   useEffect(() => {
     (async() => {
-      setAllPokemon(fullPokemonList.pokemon);
+      // setAllPokemon(fullPokemonList.pokemon);
       setPokemon(fullPokemonList.pokemon);
     })();
   }, [fullPokemonList])

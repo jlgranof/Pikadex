@@ -28,6 +28,20 @@ export const restoreUser = createAsyncThunk(
   }
 )
 
+export const signUp = createAsyncThunk(
+  'auth/signupUser',
+  async({ username, email, password, avatarUrl }, thunkAPI) => {
+    const response = await csrfFetch('/authentication/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        username, email, password, avatarUrl
+      })
+    });
+    const data = await response.json();
+    return data.user;
+  }
+)
+
 
 // Creating Auth Clice and handling the actions
 export const authSlice = createSlice({
@@ -41,6 +55,9 @@ export const authSlice = createSlice({
       state.user = action.payload;
     });
     builder.addCase(restoreUser.fulfilled, (state, action) => {
+      state.user = action.payload;
+    });
+    builder.addCase(signUp.fulfilled, (state, action) => {
       state.user = action.payload;
     });
   }

@@ -16,7 +16,7 @@ const PokemonInfoPage = () => {
         setCurrentPokemon(pokemon);
       }
     })();
-  }, [fullPokemonList]);
+  }, [fullPokemonList, id]);
 
   if (!currentPokemon) return 'Loading...'
 
