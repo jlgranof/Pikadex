@@ -17,6 +17,17 @@ export const login = createAsyncThunk(
   }
 )
 
+// Restore Thunk
+export const restoreUser = createAsyncThunk(
+  'auth/restoreUser',
+  async() => {
+    const response = await csrfFetch('/authentication/session');
+    const data = await response.json();
+    // console.log(response)
+    return data.user;
+  }
+)
+
 
 // Creating Auth Clice and handling the actions
 export const authSlice = createSlice({
@@ -27,6 +38,9 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
+      state.user = action.payload;
+    });
+    builder.addCase(restoreUser.fulfilled, (state, action) => {
       state.user = action.payload;
     });
   }

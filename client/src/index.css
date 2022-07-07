@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .info-container-clip {
+    clip-path: polygon(40% 4%, 60% 4%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0, 35% 0)
+  }
+  .poke-grid {
+    grid-template-columns: repeat(auto-fit, minmax(20em,1fr));
+  }
+}
