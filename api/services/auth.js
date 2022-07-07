@@ -46,7 +46,6 @@ const restoreUser = (req, res, next) => {
     if (e) return next();
 
     try {
-      console.log(jwtPayload.data)
       const { id } = jwtPayload.data;
       req.user = await prisma.user.findUnique({
         where: {

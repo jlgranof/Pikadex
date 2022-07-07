@@ -10,15 +10,13 @@ const { secret, expiresIn } = jwtConfig;
 
 // Middleware to set a JWT Cookie
 const setTokenCookie = (res, user) => {
-  user = toSafeUser(user)
-
   // Create the token
   const token = jwt.sign(
     { data: user },
     secret,
     { expiresIn: parseInt(expiresIn) } // 1 week
   );
-  
+
   const isProduction = process.env.NODE_ENV === "production";
 
   // Set the token as a cookie
