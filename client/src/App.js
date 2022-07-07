@@ -7,6 +7,7 @@ import { getAllPokemon } from './store/pokemonSlice';
 
 import LoginForm from './components/LoginForm';
 import PokemonListPage from './Layouts/PokemonListPage';
+import PokemonInfoPage from './Layouts/PokemonInforPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ function App() {
         <Route path="/" element={<div>Hello</div>} />
         <Route path="/login" element={<LoginForm />} />
         <Route path="/pokemon" element={<PokemonListPage />} />
+        <Route path="/pokemon/:id" element={<PokemonInfoPage />}/>
       </Routes>
     </div>
   );
