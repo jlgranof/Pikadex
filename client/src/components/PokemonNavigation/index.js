@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import clsx from 'clsx'
+// import clsx from 'clsx'
 
 import PokemonImage from '../PokemonImage.js'
 
@@ -9,7 +9,8 @@ const PokemonNavigation = ({
   pictureUrl, 
   name, 
   isLegendary, 
-  isMythical 
+  isMythical,
+  type 
 }) => {
   return (
     <NavLink to={`/pokemon/${id}`} style={{textDecoration: 'none'}}>
@@ -18,6 +19,7 @@ const PokemonNavigation = ({
         name={name}
         isLegendary={isLegendary}
         isMythical={isMythical}
+        type={0}
       />
     </NavLink>
   );

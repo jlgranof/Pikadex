@@ -26,30 +26,50 @@ const PokemonInfoPage = () => {
   if (!currentPokemon) return 'Loading...'
 
   return (
-    <div className="flex flex-row">
-      {prevPokemon && <PokemonNavigation 
-        id={id-1}
-        direction='previous'
-        pictureUrl={prevPokemon.pictureUrl}
-        name={prevPokemon.name}
-        isLegendary={prevPokemon.isLegendary}
-        isMythical={prevPokemon.isMythical}
-      />}
-      <PokemonImage 
-        pokemonUrl={currentPokemon.pictureUrl}
-        name={currentPokemon.name}
-        isLegendary={currentPokemon.isLegendary}
-        isMythical={currentPokemon.isMythical}
-      />
-      {nextPokemon && <PokemonNavigation 
-        id={id+1}
-        direction='next'
-        pictureUrl={nextPokemon.pictureUrl}
-        name={nextPokemon.name}
-        isLegendary={nextPokemon.isLegendary}
-        isMythical={nextPokemon.isMythical}
-      />}
-    </div>
+    <div className="flex flex-row justify-center">
+      <div className="previous h-96 w-80 bg-black">
+        {prevPokemon && 
+          <div className="flex flex-row space-between">
+            <PokemonNavigation 
+            id={id-1}
+            direction='previous'
+            pictureUrl={prevPokemon.pictureUrl}
+            name={prevPokemon.name}
+            isLegendary={prevPokemon.isLegendary}
+            isMythical={prevPokemon.isMythical}
+          />
+            <div className="ml-14">
+              <p className="text-white">{String(id - 1).padStart(3, 0)}</p>
+              <p className="text-white">{prevPokemon.name}</p>
+            </div>
+          </div>}
+      </div>
+      <div>
+        <PokemonImage 
+          pokemonUrl={currentPokemon.pictureUrl}
+          name={currentPokemon.name}
+          isLegendary={currentPokemon.isLegendary}
+          isMythical={currentPokemon.isMythical}
+          type={1}
+        />
+      </div>
+        <div className="next h-96 w-80 bg-black">
+          {nextPokemon && 
+          <div className="flex flex-row-reverse">
+            <PokemonNavigation 
+              id={id+1}
+              direction='next'
+              pictureUrl={nextPokemon.pictureUrl}
+              name={nextPokemon.name}
+              isLegendary={nextPokemon.isLegendary}
+              isMythical={nextPokemon.isMythical}
+            />
+            <div className="mr-14">
+              <p className="text-white text-right">{String(id + 1).padStart(3, 0)}</p>
+              <p className="text-white">{nextPokemon.name}</p>
+            </div>          </div>}
+        </div>
+      </div>
   );
 };
 
