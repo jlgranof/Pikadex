@@ -44,14 +44,19 @@ const PokemonInfoPage = () => {
             </div>
           </div>}
       </div>
-      <div>
-        <PokemonImage 
-          pokemonUrl={currentPokemon.pictureUrl}
-          name={currentPokemon.name}
-          isLegendary={currentPokemon.isLegendary}
-          isMythical={currentPokemon.isMythical}
-          type={1}
-        />
+      <div className="flex flex-col text-center mt-12">
+        <p className="text-white text-4xl">{String(id).padStart(3, 0)}</p>
+        <p className="text-white text-6xl">{currentPokemon.name}</p>
+        <div className="flex m-4 justify-center">
+          <PokemonImage 
+            pokemonUrl={currentPokemon.pictureUrl}
+            name={currentPokemon.name}
+            isLegendary={currentPokemon.isLegendary}
+            isMythical={currentPokemon.isMythical}
+            type={1}
+          />
+        </div>
+        <p className="text-white text-lg">{currentPokemon.description}</p>
       </div>
         <div className="next h-96 w-80 bg-black">
           {nextPokemon && 
