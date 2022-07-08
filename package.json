@@ -1,52 +1,25 @@
 {
-  "dependencies": {
-    "@prisma/client": "^4.0.0",
-    "bcryptjs": "^2.4.3",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "csurf": "^1.11.0",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "express-async-handler": "^1.2.0",
-    "express-validator": "^6.14.2",
-    "helmet": "^5.1.0",
-    "helmet-csp": "^3.4.0",
-    "isemail": "^3.2.0",
-    "jsonwebtoken": "^8.5.1",
-    "morgan": "^1.10.0",
-    "node-fetch": "^2.6.7",
-    "per-env": "^1.0.2",
-    "prisma": "^3.15.2",
-    "psql": "^0.0.1",
-    "superstruct": "^0.16.0"
-  },
   "name": "pikadex",
-  "prisma": {
-    "seed": "node prisma/seeds/seed.js"
-  },
-  "description": "This web application is used to create and log Pokedexes across all of the main Pokemon games, as well as tracking your progress against different users.",
   "version": "1.0.0",
+  "description": "This web application is used to create and log Pokedexes across all of the main Pokemon games, as well as tracking your progress against different users.",
   "main": "index.js",
   "scripts": {
     "heroku-postbuild": "npm run build --prefix client",
-    "install": "npm install && npm --prefix client install client",
-    "start": "per-env",
-    "start:development": "nodemon -r dotenv/config ./api/app.js",
-    "start:production": "node ./api/app.js",
-    "prisma": "npx prisma"
+    "install": "npm --prefix backend install backend && npm --prefix client install client",
+    "dev:backend": "npm install --prefix backend start",
+    "dev:client": "npm install --prefix client start",
+    "prisma": "npm run --prefix backend prisma",
+    "start": "npm start --prefix backend"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jlgranof/Pikadex.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/jlgranof/Pikadex/issues"
   },
-  "homepage": "https://github.com/jlgranof/Pikadex#readme",
-  "devDependencies": {
-    "dotenv-cli": "^5.1.0",
-    "nodemon": "^2.0.18"
-  }
+  "homepage": "https://github.com/jlgranof/Pikadex#readme"
 }
