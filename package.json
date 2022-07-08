@@ -17,6 +17,7 @@
     "node-fetch": "^2.6.7",
     "per-env": "^1.0.2",
     "prisma": "^3.15.2",
+    "psql": "^0.0.1",
     "superstruct": "^0.16.0"
   },
   "name": "pikadex",
@@ -27,9 +28,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "npm run build --prefix client",
+    "install": "npm install && npm --prefix client install client",
     "start": "per-env",
     "start:development": "nodemon -r dotenv/config ./api/app.js",
-    "start:production": "node ./api/app.js"
+    "start:production": "node ./api/app.js",
+    "prisma": "npx prisma"
   },
   "repository": {
     "type": "git",
