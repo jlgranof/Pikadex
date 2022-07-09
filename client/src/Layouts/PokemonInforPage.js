@@ -5,6 +5,9 @@ import { useParams } from "react-router-dom";
 import PokemonImage from "../components/PokemonImage.js";
 import PokemonNavigation from "../components/PokemonNavigation/index.js";
 
+  // NEED TO FIX THE PREVIOUS AND NEXT DIVS TO COMPLETELY GO INSIDE POKEMON NAVIGATION
+  // REFACTOR THIS COMPONENT TO BE PASSED IN A POKEMON LIST SO IT WORKS WITH POKEDEXES
+
 const PokemonInfoPage = () => {
   const fullPokemonList = useSelector(state => state.pokemon.pokemon);
   const [currentPokemon, setCurrentPokemon] = useState(0);
@@ -24,6 +27,9 @@ const PokemonInfoPage = () => {
   }, [fullPokemonList, id]);
 
   if (!currentPokemon) return 'Loading...'
+
+  // NEED TO FIX THE PREVIOUS AND NEXT DIVS TO COMPLETELY GO INSIDE POKEMON NAVIGATION
+  // REFACTOR THIS COMPONENT TO BE PASSED IN A POKEMON LIST SO IT WORKS WITH POKEDEXES
 
   return (
     <div className="flex flex-row justify-center">

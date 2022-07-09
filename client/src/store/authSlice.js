@@ -48,7 +48,6 @@ export const logout = createAsyncThunk(
     const response = await csrfFetch('/authentication/logout', {
       method: 'DELETE'
     });
-    return response;
   }
 )
 
@@ -70,7 +69,7 @@ export const authSlice = createSlice({
     builder.addCase(signUp.fulfilled, (state, action) => {
       state.user = action.payload;
     });
-    builder.addCase(logout.fulfilled, (state, action) => {
+    builder.addCase(logout.fulfilled, (state) => {
       state.user = {};
     })
   }

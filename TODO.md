@@ -1,6 +1,6 @@
+// REFACTOR THIS COMPONENT TO BE PASSED IN A POKEMON LIST SO IT WORKS WITH POKEDEXES
+
 ## [] Auth
-1. Restore []
-2. Sign Up []
 3. Log Out []
 
 ## [] Backend
@@ -22,15 +22,12 @@
 5. Error Handling []
   
 
-## [] Deploying
-
 ## [] Frontend
 1. Landing Page []
   * Design []
   * Layout []
   * Styling []
 2. Header []
-  * Design []
   * Layout []
   * Styling []
 3. Footer []
@@ -53,8 +50,6 @@
   * Pokemon of The Day []
     - 1 in Focus []
     - 5 on each side smaller []
-7. Pokemon Image [x]
-8. Pokemon Card [x]
 9. Pokemon Page []
 10. Leaderboard Page []
 11. User Profile Page []
