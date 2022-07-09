@@ -30,7 +30,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-900 h-full">
       <Header isLoaded={isLoaded}/>
       {isLoaded && 
         <Routes>

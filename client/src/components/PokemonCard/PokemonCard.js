@@ -12,7 +12,7 @@ const PokemonCard = ({ pokemon }) => {
             name={pokemon.name}
             isLegendary={pokemon.isLegendary}
             isMythical={pokemon.isMythical}
-            type={2}
+            type={1}
           />
         </div>
         <div className='bg-gradient-to-bl from-slate-700 to-slate-300 info-container-clip rounded-2xl border-t-4 border-b-2 border-x-2 text-white text-xl'>

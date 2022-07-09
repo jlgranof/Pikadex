@@ -16,11 +16,6 @@ const PokemonImage = ({
 
   const size = [
     {
-      first: 'h-16 w-16',
-      second: 'h-16',
-      third: 'h-16'
-    },
-    {
       first: 'h-80 w-80',
       second: 'h-72',
       third: 'h-80'

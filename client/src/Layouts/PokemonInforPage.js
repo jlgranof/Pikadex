@@ -32,55 +32,57 @@ const PokemonInfoPage = () => {
   // REFACTOR THIS COMPONENT TO BE PASSED IN A POKEMON LIST SO IT WORKS WITH POKEDEXES
 
   return (
-    <div className="flex flex-row justify-center">
-      <div className="previous h-96 w-80 bg-black">
-        {prevPokemon && 
-          <div className="flex flex-row space-between">
-            <PokemonNavigation 
-            id={id-1}
-            direction='previous'
-            pictureUrl={prevPokemon.pictureUrl}
-            name={prevPokemon.name}
-            isLegendary={prevPokemon.isLegendary}
-            isMythical={prevPokemon.isMythical}
-          />
-            <div className="ml-14">
-              <p className="text-white">{String(id - 1).padStart(3, 0)}</p>
-              <p className="text-white">{prevPokemon.name}</p>
-            </div>
-          </div>}
-      </div>
-      <div className="flex flex-col text-center mt-12">
-        <p className="text-white text-4xl">{String(id).padStart(3, 0)}</p>
-        <p className="text-white text-6xl">{currentPokemon.name}</p>
-        <div className="flex m-4 justify-center">
+    <div className="h-screen">
+      <div className="flex flex-row justify-between align-middle">
+        <div className="flex previous h-1/3 w-64 bg-black ml-2 mt-44">
+          {prevPokemon && 
+            <div className="flex flex-col justify-end text-right">
+              <p className="text-white text-2xl m-4 -mr-2">{String(id - 1).padStart(3, 0)}</p>
+                <PokemonNavigation 
+                  id={id-1}
+                  direction='previous'
+                  pictureUrl={prevPokemon.pictureUrl}
+                  name={prevPokemon.name}
+                  isLegendary={prevPokemon.isLegendary}
+                  isMythical={prevPokemon.isMythical}
+                />
+              <p className="text-white text-3xl m-4 -mr-2">{prevPokemon.name}</p>
+            </div>}
+        </div>
+
+        <div className="flex mt-8 justify-center flex-col w-1/5">
+          <div className="flex flex-col text-center m-8">
+            <p className="text-white text-4xl">{String(id).padStart(3, 0)}</p>
+            <p className="text-white text-6xl">{currentPokemon.name}</p>
+          </div>
           <PokemonImage 
             pokemonUrl={currentPokemon.pictureUrl}
             name={currentPokemon.name}
             isLegendary={currentPokemon.isLegendary}
             isMythical={currentPokemon.isMythical}
-            type={1}
+            type={0}
           />
+          <p className="text-white text-lg mt-10">{currentPokemon.description}</p>
         </div>
-        <p className="text-white text-lg">{currentPokemon.description}</p>
+
+        <div className="next h-1/3 w-64 bg-black flex content-between mr-2 mt-44">
+            {nextPokemon && 
+            <div className="flex flex-col text-left justify-center">
+              <p className="text-white text-2xl m-4">{String(id + 1).padStart(3, 0)}</p>
+              <PokemonNavigation 
+                id={id+1}
+                direction='next'
+                pictureUrl={nextPokemon.pictureUrl}
+                name={nextPokemon.name}
+                isLegendary={nextPokemon.isLegendary}
+                isMythical={nextPokemon.isMythical}
+              />
+              <p className="text-white text-3xl m-4">{nextPokemon.name}</p>      
+            </div>}
+          </div>
+
       </div>
-        <div className="next h-96 w-80 bg-black">
-          {nextPokemon && 
-          <div className="flex flex-row-reverse">
-            <PokemonNavigation 
-              id={id+1}
-              direction='next'
-              pictureUrl={nextPokemon.pictureUrl}
-              name={nextPokemon.name}
-              isLegendary={nextPokemon.isLegendary}
-              isMythical={nextPokemon.isMythical}
-            />
-            <div className="mr-14">
-              <p className="text-white text-right">{String(id + 1).padStart(3, 0)}</p>
-              <p className="text-white">{nextPokemon.name}</p>
-            </div>          </div>}
-        </div>
-      </div>
+    </div>
   );
 };
 

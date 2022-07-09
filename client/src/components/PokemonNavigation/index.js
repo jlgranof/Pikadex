@@ -19,7 +19,7 @@ const PokemonNavigation = ({
         name={name}
         isLegendary={isLegendary}
         isMythical={isMythical}
-        type={0}
+        type={1}
       />
     </NavLink>
   );
