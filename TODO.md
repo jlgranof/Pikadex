@@ -17,8 +17,6 @@
   * Edit a Pokemon on a Specific Pokedex []
   * Delete a Pokemon on a Specific Pokedex []
 3. Leaderboard Routes []
-4. Pokemon Routes []
-  * Get a Specifc Pokemon []
 5. Error Handling []
   
 

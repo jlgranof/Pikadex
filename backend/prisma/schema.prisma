@@ -18,13 +18,15 @@ model User {
   hashedPassword String 
   avatarUrl String
   joined DateTime  @default(now())
+
+  pokedexes Pokedex[] 
 }
 
 model Type {
   id Int @id @default(autoincrement())
   name String @db.VarChar(30) @unique
 
-  Pokemons PokemonTypes[]
+  pokemons PokemonTypes[]
 }
 
 model Pokemon {
@@ -46,13 +48,60 @@ model Pokemon {
   pictureUrl String
 
   types PokemonTypes[]
+  pokemons UserPokemon[]
 }
 
 model PokemonTypes {
   pokemon Pokemon @relation(fields: [pokemonId], references: [id])
   pokemonId Int
+
   type Type @relation(fields: [typeId], references: [id])
   typeId Int
 
   @@id([pokemonId, typeId])
+}
+
+model Game {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(30) @unique
+  generationNumber Int 
+
+  pokedexes Pokedex[]
+}
+
+model Pokedex {
+  id Int @id @default(autoincrement())
+  name String @db.VarChar(25)
+  description String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id])
+  userId Int
+
+  game Game @relation(fields: [gameId], references: [id])
+  gameId Int
+
+  pokemons UserPokemon[]
+}
+
+model UserPokemon {
+  id Int @id @default(autoincrement())
+  level Int
+  hp Int
+  attack Int
+  defense Int
+  specialAttack Int
+  specialDefense Int
+  speed Int
+  stillOwn Boolean @default(true)
+  evolved Boolean @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  pokemon Pokemon @relation(fields: [pokemonId], references: [id])
+  pokemonId Int
+
+  pokedex Pokedex @relation(fields: [pokedexId], references: [id])
+  pokedexId Int
 }
