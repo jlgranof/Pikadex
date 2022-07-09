@@ -5,7 +5,6 @@
 
 ## [] Backend
 1. Pokedex Routes []
-  * Get all Pokedexes []
   * Get all Pokedexes for a User []
   * Get all Pokedexes for a Game []
   * Get a Specific Pokedex []

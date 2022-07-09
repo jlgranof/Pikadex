@@ -5,10 +5,10 @@ const seedPokedexes = require('./pokedexes');
 const seedUserPokemon = require('./userPokemon');
 
 const seedAll = async() => {
-  // await seedUsers();
-  // await seedPokemon();
-  // await seedGames();
-  // await seedPokedexes();
+  await seedUsers();
+  await seedPokemon();
+  await seedGames();
+  await seedPokedexes();
   await seedUserPokemon();
 }
 
