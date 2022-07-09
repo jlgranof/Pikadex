@@ -30,8 +30,6 @@ const seedPokemon = async () => {
       }
     });
 
-    console.log(newPokemon);
-
     for (let j = 0; j < types.length; j++) {
       const upsertType = await prisma.type.upsert({
         where: {

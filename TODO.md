@@ -1,7 +1,5 @@
 // REFACTOR THIS COMPONENT TO BE PASSED IN A POKEMON LIST SO IT WORKS WITH POKEDEXES
 
-## [] Auth
-3. Log Out []
 
 ## [] Backend
 1. Pokedex Routes []
@@ -33,7 +31,6 @@
   * Styling []
 4. Redux Store []
   * Design of State []
-  * Pokemon Reducer []
   * Pokedex Reducer []
 5. Application Setup []
   * Initial useEffect []
