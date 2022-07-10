@@ -2,17 +2,6 @@
 
 
 ## [] Backend
-1. Pokedex Routes []
-  * Get all Pokedexes for a User []
-  * Get all Pokedexes for a Game []
-  * Get a Specific Pokedex []
-  * Create a Pokedex []
-  * Edit a Pokedex []
-  * Delete a Pokedex []
-2. User Pokemon Routes []
-  * Add a Pokemon to a Pokedex []
-  * Edit a Pokemon on a Specific Pokedex []
-  * Delete a Pokemon on a Specific Pokedex []
 3. Leaderboard Routes []
 5. Error Handling []
   

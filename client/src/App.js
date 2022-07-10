@@ -23,13 +23,13 @@ function App() {
     (async () => {
       await dispatch(getAllPokemon());
       await dispatch(getAllPokedexes());
+      await dispatch(getAllUserPokedexes(user))
     })();
   });
 
   useEffect(() => {
     (async () => {
       await dispatch(restoreUser()).then(() => setIsLoaded(true))
-      await dispatch(getAllUserPokedexes(user))
     })();
   }, [dispatch]);
 
