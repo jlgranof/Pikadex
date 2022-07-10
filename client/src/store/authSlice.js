@@ -23,7 +23,6 @@ export const restoreUser = createAsyncThunk(
   async() => {
     const response = await csrfFetch('/authentication/session');
     const data = await response.json();
-    // console.log(response)
     return data.user;
   }
 )
@@ -48,6 +47,7 @@ export const logout = createAsyncThunk(
     const response = await csrfFetch('/authentication/logout', {
       method: 'DELETE'
     });
+    return response;
   }
 )
 

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 
 import { restoreUser } from './store/authSlice';
 import { getAllPokemon } from './store/pokemonSlice';
+import { getAllPokedexes, getAllUserPokedexes } from './store/pokedexSlice';
 
 import Header from './components/Header';
 import LoginForm from './components/LoginForm';
@@ -16,16 +17,19 @@ import PokemonInfoPage from './Layouts/PokemonInforPage';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  const user = useSelector(state => state.auth.user);
 
   useEffect(() => {
     (async () => {
       await dispatch(getAllPokemon());
+      await dispatch(getAllPokedexes());
     })();
   });
 
   useEffect(() => {
     (async () => {
-      await dispatch(restoreUser()).then(() => setIsLoaded(true));
+      await dispatch(restoreUser()).then(() => setIsLoaded(true))
+      await dispatch(getAllUserPokedexes(user))
     })();
   }, [dispatch]);
 
