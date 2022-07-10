@@ -17,7 +17,6 @@ export const getAllUserPokedexes = createAsyncThunk(
   async({ id }, thunkAPI) => {
     const response = await csrfFetch(`/api/pokedex/user/${id}`);
     const data = await response.json();
-    console.log(data)
     return data.pokedexes;
   }
 )
