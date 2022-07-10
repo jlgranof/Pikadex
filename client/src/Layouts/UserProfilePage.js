@@ -6,7 +6,7 @@ const UserProfilePage = () => {
   const user = useSelector(state => state.auth.user);
   const pokedexes = useSelector(state => state.pokedex.pokedex.user);
 
-  if (!user || !pokedexes) return <div className="text-white text-xl">Loading...</div>
+  if (!user || !pokedexes || (pokedexes && !pokedexes.length)) return <div className="text-white text-xl">Loading...</div>
 
   const totalPokemon = () => {
     return pokedexes.reduce((count, pokedex) => {
