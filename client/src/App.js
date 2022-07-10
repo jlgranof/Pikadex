@@ -23,7 +23,7 @@ function App() {
     (async () => {
       await dispatch(getAllPokemon());
       await dispatch(getAllPokedexes());
-      await dispatch(getAllUserPokedexes(user))
+      if (user) await dispatch(getAllUserPokedexes(user))
     })();
   });
 
