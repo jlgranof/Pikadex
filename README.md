@@ -14,14 +14,13 @@ Live demo [_here_](https://www.the-pikadex.herokuapp.com/).
 
 
 ## Technologies Used
-1. NodeJs
-2. ExpressJs
+1. Node
+2. Express
 3. PosgreSQL
 4. Prisma
 5. React
 6. Redux 
 7. Tailwind
-8. Jest
 
 ## Features
 
@@ -66,19 +65,6 @@ heroku run npm run prisma db seed
 ```
 
 ## Project Status
-This project is still in development. Here is the current to do list:
-1. Backend - Pokedex Endpoints
-2. Frontend - Finish Redux Store w/ Pokedex Routes
-3. Frontend - Finish Pokemon Info Page
-4. Frontend - Create User Profile and Ability to Create and Edit Pokedexes
-5. Frontend - Landing Page
-6. README and Documentation
-7. REFACTOR!
-8. Finish Pokemon List page w/ Searches, Sorts and Filters 
-9. Style
-10. Refactor Pokemon List and View Pages to take in a List of Pokemon - so they can be used with the Pokedexes
-9. Leaderboard Feature
-
 
 ## Contact
 Created by [Jeff Granof](https://jlgranof.github.io/).

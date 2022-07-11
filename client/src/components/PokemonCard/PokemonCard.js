@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import PokemonImage from '../PokemonImage.js';
+import PokemonImage from '../PokemonImage/index.js';
 import NameCard from '../NameCard/index.js';
 
 const PokemonCard = ({ pokemon }) => {

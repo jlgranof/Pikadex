@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from 'react-redux';
 
-import PokemonCard from '../components/PokemonCard/PokemonCard';
-
 import PokemonListContainer from "../components/PokemonListContainer";
 
 const PokemonListPage = () => {
@@ -14,7 +12,6 @@ const PokemonListPage = () => {
       setPokemon(fullPokemonList.pokemon);
     })();
   }, [fullPokemonList])
-
 
   return (
     <div className="h-full">

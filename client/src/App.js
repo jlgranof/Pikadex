@@ -12,7 +12,7 @@ import SignupForm from './components/SignupForm';
 import PokemonListPage from './Layouts/PokemonListPage';
 import PokemonInfoPage from './Layouts/PokemonInforPage';
 import UserProfilePage from './Layouts/UserProfilePage';
-import PokemonImage from './components/PokemonImage.js';
+import PokemonImage from './components/PokemonImage/index.js';
 
 // UPDATE ROOT WHEN LANDING PAGE IS MADE
 

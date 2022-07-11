@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-import PokemonImage from "../components/PokemonImage.js";
+import PokemonImage from "../components/PokemonImage/index.js";
 import PokemonNavigation from "../components/PokemonNavigation/index.js";
 
   // NEED TO FIX THE PREVIOUS AND NEXT DIVS TO COMPLETELY GO INSIDE POKEMON NAVIGATION

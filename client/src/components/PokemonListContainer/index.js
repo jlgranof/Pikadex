@@ -1,15 +1,27 @@
+import { useState, useEffect } from "react";
+
 import PokemonCard from "../PokemonCard/PokemonCard";
 
 const PokemonListContainer = ({ pokemons }) => {
-  const pokeList = Array.isArray(pokemons) && pokemons.length
-    ? pokemons.map(pokemon => (
+  const [fullPokemonList, setFullPokemonList] = useState(null);
+  const [currentPokemonList, setCurrentPokemonList] = useState(null);
+
+  useEffect(() => {
+    (async() => {
+      setFullPokemonList(pokemons);
+      setCurrentPokemonList(fullPokemonList);
+    })();
+  }, [pokemons, currentPokemonList]);
+
+  if (!currentPokemonList) return <div className="text-white">Loading...</div>
+
+  const pokeList = currentPokemonList.map(pokemon => (
       <div className="h-max" key={pokemon.id}>
         <PokemonCard 
         pokemon={pokemon}
         />
       </div>
-    ))
-    : <div className="text-white">Loading...</div>
+    ));
 
   return (
     <div className="text-white text-2xl m-10">

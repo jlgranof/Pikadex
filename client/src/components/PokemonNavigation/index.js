@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 // import clsx from 'clsx'
 
-import PokemonImage from '../PokemonImage.js'
+import PokemonImage from '../PokemonImage/index.js'
 
 const PokemonNavigation = ({ 
   id, 
