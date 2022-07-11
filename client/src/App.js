@@ -12,6 +12,7 @@ import SignupForm from './components/SignupForm';
 import PokemonListPage from './Layouts/PokemonListPage';
 import PokemonInfoPage from './Layouts/PokemonInforPage';
 import UserProfilePage from './Layouts/UserProfilePage';
+import PokemonImage from './components/PokemonImage.js';
 
 // UPDATE ROOT WHEN LANDING PAGE IS MADE
 
@@ -35,11 +36,14 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="bg-slate-900 h-full">
+    <div className="bg-slate-900">
       <Header isLoaded={isLoaded}/>
       {isLoaded && 
         <Routes>
-          <Route path="/" element={<PokemonListPage />} />
+            <Route path="/" element={<PokemonImage pokemonUrl="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+              name="Bulbasaur"
+              isLegendary={false}
+              isMythical={false} />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/pokemon" element={<PokemonListPage />} />
