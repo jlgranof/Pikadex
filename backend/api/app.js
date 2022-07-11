@@ -29,9 +29,9 @@ app.use(express.json());
 if (!isProduction) app.use(cors());
 
 // Add helmet middleware to mitigate XSS attacks
-// app.use(helmet.crossOriginResourcePolicy({
-//   policy: "cross-origin"
-// }));
+app.use(helmet.crossOriginResourcePolicy({
+  policy: "cross-origin"
+}));
 
 
 // Add csurf middleware and configure it to use cookies. It will add a _csrf cookie that
