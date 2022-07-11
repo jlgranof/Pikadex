@@ -4,7 +4,7 @@ import PokemonImage from '../PokemonImage.js';
 
 const PokemonCard = ({ pokemon }) => {
   return (
-    <div className='rounded-2xl border-gray-500 border-2 w-10/12 text-center items-center m-5 bg-gradient-to-tr from-slate-700 to-slate-300'>
+    <div className='rounded-2xl border-gray-500 border-2 w-9/12 text-center items-center m-5 bg-gradient-to-tr from-slate-700 to-slate-300'>
       <NavLink to={`/pokemon/${pokemon.nationalPokedexNumber}`} style={{textDecoration: 'none'}}>
         <div className='flex justify-center h-52 mb-3'>
           <PokemonImage 

@@ -20,9 +20,6 @@ code {
   .info-container-clip {
     clip-path: polygon(40% 4%, 60% 4%, 65% 0, 100% 0, 100% 100%, 0 100%, 0 0, 35% 0)
   }
-  .poke-grid {
-    grid-template-columns: repeat(auto-fit, minmax(20em,1fr));
-  }
 
   .header {
     clip-path: polygon(0 0, 100% 0, 100% 65%, 70% 65%, 60% 100%, 40% 100%, 30% 65%, 0 65%);

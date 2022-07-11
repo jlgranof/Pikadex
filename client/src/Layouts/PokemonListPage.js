@@ -3,36 +3,27 @@ import { useSelector } from 'react-redux';
 
 import PokemonCard from '../components/PokemonCard/PokemonCard';
 
+import PokemonListContainer from "../components/PokemonListContainer";
+
 const PokemonListPage = () => {
   const fullPokemonList = useSelector(state => state.pokemon);
-  // const [allPokemon, setAllPokemon] = useState([]);
   const [pokemon, setPokemon] = useState('')
 
   useEffect(() => {
     (async() => {
-      // setAllPokemon(fullPokemonList.pokemon);
       setPokemon(fullPokemonList.pokemon);
     })();
   }, [fullPokemonList])
 
-  
-  const list = Array.isArray(pokemon)
-    ? pokemon.map(el => <PokemonCard key={el.id} pokemon={el}/>)
-    : 'Loading...'
 
   return (
-    <div>
+    <div className="h-screen">
       <div className="Header">
-        <div className="Featured"></div>
-        <div className="Search"></div>
-        <div className="Advanced-Search"></div>
-        <div className="Sort"></div>
+        <div className="Featured text-white">This is where the featured Pokemon Will Go</div>
       </div>
-
-      <div className="grid poke-grid gap-1.5 w-full">
-        {list}
-      </div>
-
+      <PokemonListContainer 
+        pokemons={pokemon}
+      />
     </div>
   )
 };

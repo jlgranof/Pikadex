@@ -25,7 +25,7 @@ const PokedexListCard = ({ pokedex }) => {
         <p className="text-white">Total Stats: {numbers.stats}</p>
       </div>
       <div className="text-white m-4">
-        The rest of this will contain pokemon pictures and levels (up to 5?)
+        The rest of this will contain pokemon pictures and levels (up to 6)
       </div>
     </div>
   )
