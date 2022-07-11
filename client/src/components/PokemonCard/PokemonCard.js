@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
 import PokemonImage from '../PokemonImage.js';
+import NameCard from '../NameCard/index.js';
 
 const PokemonCard = ({ pokemon }) => {
   return (
@@ -14,12 +15,12 @@ const PokemonCard = ({ pokemon }) => {
             isMythical={pokemon.isMythical}
           />
         </div>
-         <div className='bg-gradient-to-bl from-slate-700 to-slate-300 info-container-clip rounded-2xl border-t-4 border-b-2 border-x-2 text-white text-xl h-44'>
-           <p className='m-3.5 p-1'>{String(pokemon.nationalPokedexNumber).padStart(3, 0)}</p>
-           <h1 className='m-3.5 p-1 text-3xl uppercase drop-shadow-lg'>{pokemon.name}</h1>
-           <div className="flex flex-row justify-around text-black">
-             {pokemon.types.map(type => <p key={type.type.name}>{type.type.name}</p>)}
-           </div>
+         <div className='h-48'>
+           <NameCard 
+              nationalPokedexNumber={pokemon.nationalPokedexNumber}
+              name={pokemon.name}
+              types={pokemon.types}
+           />
          </div>
        </NavLink>
      </div>
