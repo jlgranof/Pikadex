@@ -15,7 +15,7 @@ const PokemonImage = ({
 
 
   return (
-    <div className="flex rounded-full bg-white relative h-5/6 w-4/6 justify-center">
+    <div className="flex rounded-full bg-white relative h-5/6 w-5/6 justify-center">
       <div className={clsx(color, 'flex rounded-full absolute z-10 h-full w-full justify-center')} >
         <img className='w-full h-full' src={pokemonUrl} alt={name}/>
       </div>

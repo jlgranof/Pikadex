@@ -40,10 +40,7 @@ function App() {
       <Header isLoaded={isLoaded}/>
       {isLoaded && 
         <Routes>
-            <Route path="/" element={<PokemonImage pokemonUrl="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-              name="Bulbasaur"
-              isLegendary={false}
-              isMythical={false} />} />
+            <Route path="/" element={<PokemonListPage/>} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/pokemon" element={<PokemonListPage />} />
