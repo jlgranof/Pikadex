@@ -10,9 +10,8 @@ import Header from './components/Header';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import PokemonListPage from './Layouts/PokemonListPage';
-import PokemonInfoPage from './Layouts/PokemonInforPage';
+import PokemonPage from './Layouts/PokemonPage';
 import UserProfilePage from './Layouts/UserProfilePage';
-import PokemonImage from './components/PokemonImage/index.js';
 
 // UPDATE ROOT WHEN LANDING PAGE IS MADE
 
@@ -20,6 +19,7 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const user = useSelector(state => state.auth.user);
+  const pokemon = useSelector(state => state.pokemon);
 
   useEffect(() => {
     (async () => {
@@ -36,15 +36,15 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="bg-slate-900">
+    <div className="bg-slate-200">
       <Header isLoaded={isLoaded}/>
       {isLoaded && 
         <Routes>
-            <Route path="/" element={<PokemonListPage/>} />
+          <Route path="/" element={<PokemonListPage/>} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/pokemon" element={<PokemonListPage />} />
-          <Route path="/pokemon/:id" element={<PokemonInfoPage />}/>
+          <Route path="/pokemon/:id" element={<PokemonPage />}/>
           <Route path='profile' element={<UserProfilePage />} />
         </Routes>
       }

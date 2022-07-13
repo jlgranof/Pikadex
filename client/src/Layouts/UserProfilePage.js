@@ -1,10 +1,14 @@
 import { useSelector } from "react-redux";
+import { Navigate } from 'react-router-dom';
 
 import PokedexListCard from "../components/PokedexListCard";
 
 const UserProfilePage = () => {
   const user = useSelector(state => state.auth.user);
   const pokedexes = useSelector(state => state.pokedex.pokedex.user);
+
+  // For if user logs out in profile page or tries to navigate to profile page when logged out
+  if (!user || (user && !Object.values(user).length)) return (<Navigate to="/" />);
 
   if (!user || !pokedexes || (pokedexes && !pokedexes.length)) return <div className="text-white text-xl">Loading...</div>
 

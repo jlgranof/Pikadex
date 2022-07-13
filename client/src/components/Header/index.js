@@ -11,7 +11,8 @@ const Header = ({ isLoaded }) => {
 
   useEffect(() => {
     if (user && Object.values(user).length) setLoggedIn(true)
-  }, [user])
+  }, [user]);
+
 
   const onLogout = () => {
     dispatch(logout());
