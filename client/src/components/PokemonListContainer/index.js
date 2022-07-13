@@ -24,7 +24,7 @@ const PokemonListContainer = ({ pokemons }) => {
     ));
 
   return (
-    <div className="text-white text-2xl m-10">
+    <div className="text-2xl m-10">
       <div>This will be the Search Bar</div>
       <div>This will be the Advanced Search Container</div>
       <div>This will be the Sort Container</div>

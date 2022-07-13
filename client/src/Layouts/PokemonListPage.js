@@ -16,7 +16,7 @@ const PokemonListPage = () => {
   return (
     <div className="h-full">
       <div className="Header">
-        <div className="Featured text-white">This is where the featured Pokemon Will Go</div>
+        <div className="">This is where the featured Pokemon Will Go</div>
       </div>
       <PokemonListContainer 
         pokemons={pokemon}
