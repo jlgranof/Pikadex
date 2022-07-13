@@ -1,5 +1,6 @@
 import PokemonImage from "../PokemonImage";
 import PokemonData from "./PokemonData";
+import Types from "../Types";
 
 const PokemonInfo = ({ pokemon }) => {
   return (
@@ -32,16 +33,10 @@ const PokemonInfo = ({ pokemon }) => {
           />
         </div>
       </div>
-      <div className="flex flex-row">
-        <div className="m-10">
-          <p className="text-2xl">Weaknesses</p>
-        </div>
-        <div className="m-10">
-          <p className="text-2xl">Types</p>
-        </div>
-        <div className="m-10">
-          <p className="text-2xl">Strengths</p>
-        </div>
+      <div className="w-2/3">
+        <Types 
+          types={pokemon.types}
+        />
       </div>
     </div>
   );
