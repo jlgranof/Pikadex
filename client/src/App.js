@@ -19,19 +19,13 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   const user = useSelector(state => state.auth.user);
-  const pokemon = useSelector(state => state.pokemon);
-
-  useEffect(() => {
-    (async () => {
-      await dispatch(getAllPokemon());
-      await dispatch(getAllPokedexes());
-      if (user) await dispatch(getAllUserPokedexes(user))
-    })();
-  });
 
   useEffect(() => {
     (async () => {
       await dispatch(restoreUser()).then(() => setIsLoaded(true))
+      await dispatch(getAllPokemon());
+      await dispatch(getAllPokedexes());
+      if (user) await dispatch(getAllUserPokedexes(user))
     })();
   }, [dispatch]);
 
