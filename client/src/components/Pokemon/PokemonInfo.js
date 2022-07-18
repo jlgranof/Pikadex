@@ -1,6 +1,7 @@
 import PokemonImage from "../PokemonImage";
 import PokemonData from "./PokemonData";
 import Types from "../Types";
+import StatsContainer from "../StatsContainer";
 
 const PokemonInfo = ({ pokemon }) => {
   return (
@@ -11,7 +12,14 @@ const PokemonInfo = ({ pokemon }) => {
       </div>
       <div className="flex flex-row m-10 w-full justify-center items-center">
         <div className="w-1/5">
-        Stats
+          {<StatsContainer 
+            hp={pokemon.hp}
+            attack={pokemon.attack}
+            defense={pokemon.defense}
+            specialAttack={pokemon.specialAttack}
+            specialDefense={pokemon.specialDefense}
+            speed={pokemon.speed}
+          />}
         </div>
         <div className="flex w-1/3 justify-center items-center">
           <div className="flex h-72 w-72 justify-center items-center">
