@@ -11,7 +11,7 @@ import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 import PokemonListPage from './Layouts/PokemonListPage';
 import PokemonPage from './Layouts/PokemonPage';
-import UserProfilePage from './Layouts/UserProfilePage';
+import MyProfilePage from './Layouts/MyProfilePage';
 
 // UPDATE ROOT WHEN LANDING PAGE IS MADE
 
@@ -39,7 +39,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/pokemon" element={<PokemonListPage />} />
           <Route path="/pokemon/:id" element={<PokemonPage />}/>
-          <Route path='profile' element={<UserProfilePage />} />
+          <Route path='my-profile' element={<MyProfilePage />} />
         </Routes>
       }
     </div>
