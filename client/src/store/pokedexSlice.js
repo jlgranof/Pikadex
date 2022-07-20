@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { csrfFetch } from '../uitls/csrf';
+import { csrfFetch } from '../utils/csrf';
 
 // Get all Pokedexes
 export const getAllPokedexes = createAsyncThunk(

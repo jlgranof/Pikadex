@@ -25,7 +25,7 @@ function App() {
       await dispatch(restoreUser()).then(() => setIsLoaded(true))
       await dispatch(getAllPokemon());
       await dispatch(getAllPokedexes());
-      if (user) await dispatch(getAllUserPokedexes(user))
+      await dispatch(getAllUserPokedexes(user))
     })();
   }, [dispatch]);
 

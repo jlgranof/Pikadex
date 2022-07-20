@@ -20,7 +20,7 @@ const Header = ({ isLoaded }) => {
   }
 
   let profile = loggedIn 
-    ? <NavLink to={'/profile'} style={{textDecoration:'none'}}>Profile Page</NavLink>
+    ? <NavLink to={'/my-profile'} style={{textDecoration:'none'}}>Profile Page</NavLink>
     : <NavLink to={'/login'} style={{textDecoration: 'none'}}>Login</NavLink>
 
   let signup = loggedIn

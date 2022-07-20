@@ -1,4 +1,4 @@
-import { getTypes } from "../../uitls/types";
+import { getTypes } from "../../utils/types";
 
 import TypeContainer from "./TypeContainer";
 

@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { store } from './store/store';
 import { Provider } from 'react-redux';
 
-import { restoreCSRF, csrfFetch } from './uitls/csrf';
+import { restoreCSRF, csrfFetch } from './utils/csrf';
 import { login, restoreUser } from './store/authSlice';
 
 if (process.env.NODE_ENV !== 'production') {
