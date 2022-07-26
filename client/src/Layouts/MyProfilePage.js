@@ -12,7 +12,7 @@ const MyProfilePage = () => {
 
   useEffect(() => {
       setUserPokedexes(pokedexes);
-  }, [pokedexes, userPokedexes]);
+  }, [pokedexes, userPokedexes, user]);
 
   if (!user || (user && !Object.values(user).length)) return (<Navigate to="/" />);
 
