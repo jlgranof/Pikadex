@@ -65,6 +65,7 @@ heroku run npm run prisma db seed
 ```
 
 ## Project Status
+In Progress!!!!!!!!!!!!!!!!!!!
 
 ## Contact
 Created by [Jeff Granof](https://jlgranof.github.io/).
