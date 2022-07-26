@@ -12,7 +12,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState('');
   // const [errors, setErrors] = useState([]);
 
-  if (user && Object.values(user).length) return (<Navigate to="/" />);
+  if (user && Object.values(user).length) return (<Navigate to="/" />); // eventually change to my-profile or leaderboard
 
   const handleSubmit = (e) => {
     e.preventDefault();
