@@ -3,15 +3,15 @@ import { useState, useEffect } from "react";
 import PokemonCard from "../PokemonCard/PokemonCard";
 
 const PokemonListContainer = ({ pokemons }) => {
-  const [fullPokemonList, setFullPokemonList] = useState(null);
+  // const [fullPokemonList, setFullPokemonList] = useState(null);
   const [currentPokemonList, setCurrentPokemonList] = useState(null);
 
   useEffect(() => {
     (async() => {
-      setFullPokemonList(pokemons);
-      setCurrentPokemonList(fullPokemonList);
+      // setFullPokemonList(pokemons);
+      setCurrentPokemonList(pokemons);
     })();
-  }, [pokemons, currentPokemonList]);
+  }, [pokemons]);
 
   if (!currentPokemonList) return <div className="text-white">Loading...</div>
 
