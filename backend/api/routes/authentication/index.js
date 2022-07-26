@@ -19,9 +19,7 @@ router.post(
   '/login',
   asyncHandler(async (req, res, next) => {
     const { username, password } = req.body;
-    console.log({ username, password })
     const user = await loginService({ username, password });
-    console.log({ user })
     if (!user) return next(new Error("Login failed"));
 
     setTokenCookie(res, user);
