@@ -11,7 +11,7 @@ const MyProfilePage = () => {
   const [userPokedexes, setUserPokedexes] = useState(null);
 
   useEffect(() => {
-      setUserPokedexes(pokedexes);
+      if (pokedexes) setUserPokedexes(pokedexes);
   }, [pokedexes, userPokedexes, user]);
 
   if (!user || (user && !Object.values(user).length)) return (<Navigate to="/" />);
