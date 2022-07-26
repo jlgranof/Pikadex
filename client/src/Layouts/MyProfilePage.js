@@ -14,7 +14,7 @@ const MyProfilePage = () => {
     (async() => {
       setUserPokedexes(pokedexes);
     })();
-  }, [pokedexes, userPokedexes]);
+  }, [pokedexes]);
 
   if (!user || (user && !Object.values(user).length)) return (<Navigate to="/" />);
 

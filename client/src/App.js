@@ -33,7 +33,7 @@ function App() {
     (async () => {
       if (user) await dispatch(getAllUserPokedexes(user))
     })();
-  }, [dispatch]);
+  }, [dispatch, user]);
 
   return (
     <div className="bg-slate-200">
