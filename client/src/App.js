@@ -18,6 +18,7 @@ import MyProfilePage from './Layouts/MyProfilePage';
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
+  // const [currentUser, setCurrentUser] = useState(null);
   const user = useSelector(state => state.auth.user);
 
   useEffect(() => {
@@ -25,7 +26,12 @@ function App() {
       await dispatch(restoreUser()).then(() => setIsLoaded(true))
       await dispatch(getAllPokemon());
       await dispatch(getAllPokedexes());
-      await dispatch(getAllUserPokedexes(user))
+    })();
+  }, [dispatch]);
+
+  useEffect(() => {
+    (async () => {
+      if (user) await dispatch(getAllUserPokedexes(user))
     })();
   }, [dispatch]);
 

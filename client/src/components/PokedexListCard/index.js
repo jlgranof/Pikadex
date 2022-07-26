@@ -1,34 +1,25 @@
-const PokedexListCard = ({ pokedex }) => {
-  const numbers = {
-    pokemon: 0,
-    stats: 0
-  }
-  
-  pokedex.pokemons.reduce((accum, pokemon) => {
-    numbers.pokemon++;
-    numbers.stats = numbers.stats + pokemon.hp + pokemon.attack + pokemon.defense + pokemon.specialAttack + pokemon.specialDefense + pokemon.speed;
-    return numbers;
-  }, numbers);
+import { NavLink } from "react-router-dom";
+import PokemonImage from "../PokemonImage";
 
-  const pokedexCopy = [...pokedex.pokemons];
-  pokedexCopy.sort((a, b) => b.level - a.level);
+const PokedexListCard = ({ pokedex }) => {
+  const displayPokemon = pokedex.pokemons.length
+    ? pokedex.pokemons[0]
+    : {
+      pokemonUrl: '',
+      name:'none',
+      isLegendary:false,
+      isMythical:false
+    }
 
   return (
-    <div className="border-black border-4 m-8 flex flex-row">
-      <div className="text-center border-right-white border-r-2 w-3/12">
-        <p className="text-lg">{pokedex.name}</p>
-        <p className="">{pokedex.description}</p>
-      </div>
-      <div className="ml-8">
-        <p className="">Game: {pokedex.game.name} (Gen: {pokedex.game.generationNumber})</p>
-        <p className="">Number of Pokemon: {numbers.pokemon}</p>
-        <p className="">Total Stats: {numbers.stats}</p>
-      </div>
-      <div className="m-4">
-        The rest of this will contain pokemon pictures and levels (up to 6)
-      </div>
+    <div className="rounded-2xl border-gray-500 border-2 w-48 h-full text-center items-center bg-gradient-to-tr from-slate-700 to-slate-300 m-2">
+      <NavLink to={`/`} style={{textDecoration: 'none'}}>
+        <div>
+          <p>{pokedex.name}</p>
+        </div>
+      </NavLink>
     </div>
-  )
+  );
 }
 
 export default PokedexListCard;
