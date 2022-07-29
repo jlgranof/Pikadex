@@ -29,7 +29,15 @@ export const createNewPokedex = createAsyncThunk(
     userId,
     gameId
   }, thunkAPI) => {
-    
+    const response = await csrfFetch('/api/pokedex', 
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        name, description, userId, gameId
+      })
+    });
+    const data = await response.json();
+    return data.pokedex;
   }
 )
 
@@ -49,5 +57,9 @@ export const pokedexSlice = createSlice({
     builder.addCase(getAllUserPokedexes.fulfilled, (state, action) => {
       state.pokedex.user = action.payload;
     });
+    builder.addCase(createNewPokedex.fulfilled, (state, action) => {
+      state.pokedex.user.push(action.payload);
+      state.pokedex.all.push(action.payload);
+    })
   }
 });

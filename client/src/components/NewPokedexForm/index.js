@@ -8,15 +8,17 @@ import { games } from '../../utils/games';
 
 const NewPokedexForm = () => {
   const dispatch = useDispatch();
+  let navigate = useNavigate();
   const user = useSelector(state => state.auth.user);
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [gameId, setGameId] = useState(1);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    return dispatch(createNewPokedex({ name, description, userId: user.id, gameId }));
+    await dispatch(createNewPokedex({ name, description, userId: user.id, gameId: Number(gameId) }));
+    navigate("/my-profile", { replace: true })
   };
 
   const options = games.map(game => (
@@ -44,7 +46,7 @@ const NewPokedexForm = () => {
               <textarea 
                 className='rounded-lg m-2 border-slate-900 border-2 focus:p-1 h-40 resize-none'
                 type='text'
-                value={name}
+                value={description}
                 onChange={e => setDescription(e.target.value)}
                 required
               />
