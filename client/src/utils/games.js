@@ -27,4 +27,11 @@ export const games = [
   [26, 'Moon'],
   [27, 'Ultra Sun'],
   [28, 'Ultra Moon'],
+  [29, 'Sword'], 
+  [30, 'Shield'], 
+  [31, 'Brilliant Diamond'],
+  [32, 'Shining Pearl'],
+  [33, 'Legends: Arceus'],
+  [34, 'Scarlet'],
+  [35, 'Violet']
 ]

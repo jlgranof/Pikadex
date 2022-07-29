@@ -12,7 +12,7 @@ const Profile = ({
 
   return (
     <div className="h-full flex flex-row m-20">
-      <div className='w-2/6 bg-slate-300 border-r-2 border-slate-500 h-5/6'>
+      <div className='w-2/6 bg-slate-300 border-r-2 rounded-2xl  border-slate-500 h-5/6'>
         <UserInfo 
           currentUser={currentUser}
           user={user}
