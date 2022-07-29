@@ -1,7 +1,7 @@
 # Pikadex
 This web application is used to create and log Pokedexes across all of the main Pokemon games, as well as tracking your progress against different users.
 
-Live demo [_here_](https://www.the-pikadex.herokuapp.com/).
+Live demo [_here_](https://the-pikadex.herokuapp.com/).
 
 
 ## Table of Contents
