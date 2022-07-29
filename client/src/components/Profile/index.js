@@ -2,13 +2,20 @@ import UserInfo from "../UserInfo";
 import PokedexList from "../PokedexList";
 
 import { profilePokedexInfo } from '../../utils/pokedex';
+import { useEffect, useState } from "react";
 
 const Profile = ({ 
   currentUser,
   user,
   pokedexes
 }) => {
-  const info = profilePokedexInfo(pokedexes);
+  const [info, setInfo] = useState(null);
+
+  useEffect(() => {
+    if (pokedexes) setInfo(pokedexes);
+  }, [pokedexes, info])
+
+  if (!info) return <p>Loading...</p>
 
   return (
     <div className="h-full flex flex-row m-20">
