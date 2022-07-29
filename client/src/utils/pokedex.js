@@ -3,7 +3,7 @@ export const profilePokedexInfo = (pokedexes) => {
     count: pokedexes.length,
     numOfPokemon: 0
    };
-
+   console.log(pokedexes)
   pokedexes.forEach(pokedex => {
     info.numOfPokemon += pokedex.pokemons.length;
   });

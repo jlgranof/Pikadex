@@ -37,6 +37,7 @@ export const createNewPokedex = createAsyncThunk(
       })
     });
     const data = await response.json();
+    data.pokedex.pokemons = [];
     return data.pokedex;
   }
 )

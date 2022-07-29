@@ -22,7 +22,7 @@ const NewPokedexForm = () => {
   };
 
   const options = games.map(game => (
-    <option value={game[0]}>{game[1]}</option>
+    <option key={game[0]} value={game[0]}>{game[1]}</option>
   ))
 
   return (

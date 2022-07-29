@@ -12,8 +12,8 @@ const Profile = ({
   const [info, setInfo] = useState(null);
 
   useEffect(() => {
-    if (pokedexes) setInfo(pokedexes);
-  }, [pokedexes, info])
+    if (pokedexes) setInfo(profilePokedexInfo(pokedexes));
+  }, [])
 
   if (!info) return <p>Loading...</p>
 
