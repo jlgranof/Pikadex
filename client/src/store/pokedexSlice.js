@@ -21,6 +21,18 @@ export const getAllUserPokedexes = createAsyncThunk(
   }
 )
 
+export const createNewPokedex = createAsyncThunk(
+  'pokedex/createNew',
+  async({
+    name, 
+    description,
+    userId,
+    gameId
+  }, thunkAPI) => {
+    
+  }
+)
+
 export const pokedexSlice = createSlice({
   name: 'pokedex',
   initialState: { pokedex: {

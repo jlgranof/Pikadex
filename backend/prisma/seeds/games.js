@@ -22,7 +22,7 @@ const seedGames = async () => {
         generationNumber: 2
       },
       {
-        name: 'Silber',
+        name: 'Silver',
         generationNumber: 2
       },
       {
