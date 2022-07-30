@@ -13,7 +13,7 @@ const PokemonListContainer = ({ pokemons }) => {
     })();
   }, [pokemons]);
 
-  if (!currentPokemonList) return <div className="text-white">Loading...</div>
+  if (!currentPokemonList) return <p>Loading...</p>
 
   const pokeList = currentPokemonList.map(pokemon => (
       <div className="h-max" key={pokemon.id}>

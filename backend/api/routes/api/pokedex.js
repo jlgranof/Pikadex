@@ -26,7 +26,19 @@ router.get(
         game: true,
         pokemons: {
           include: {
-            pokemon: true
+            pokemon: {
+              include: {
+                types: {
+                  select: {
+                    type: {
+                      select: {
+                        name: true
+                      }
+                    }
+                  }
+                }
+              }
+            }
         }
       }
     }
